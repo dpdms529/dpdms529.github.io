@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "예니"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/옴팡이.png"
   bio              : "공부하는 중"
   location         : "South Korea"
   email            :
