@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "Study With Yenny"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : ""
+name                     : "Yenny"
 description              : "공부하는 블로그"
 url                      : "https://dpdms529.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
