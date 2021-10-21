@@ -1,10 +1,8 @@
 ---
 title: "DB"
-layout: archive
+layout: category
 permalink: /categories/db/
 author_profile: true
 sidebar_main: true
+taxonomy: DB
 ---
-
-{% assign posts = site.categories.db %}
-{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
