@@ -6,7 +6,7 @@ layout: single
 
 ## YEEUN CHO
 ### Contact
-__Email__ [musiclove529@gmail.com](musiclove529@gmail.com)  
+__Email__ musiclove529@gmail.com  
 __Github__ [https://github.com/dpdms529](https://github.com/dpdms529)
 
 
