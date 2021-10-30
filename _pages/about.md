@@ -4,6 +4,9 @@ title: "About"
 layout: single
 ---
 
-## Study with Yenny
-Yenny의 블로그입니다.  
-함께 공부해요😆
+## YEEUN CHO
+### Contact
+__Email__ [musiclove529@gmail.com]()  
+__Github__ [https://github.com/dpdms529]()
+
+
