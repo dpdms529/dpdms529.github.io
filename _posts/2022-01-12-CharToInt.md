@@ -3,7 +3,6 @@ layout: single
 title: "[JAVA] Char To Int"
 excerpt: "char형 숫자를 int형으로 바꾸는 법"
 date: 2022-01-12 02:58:00
-last_modified_at: 2022-01-12 02:58:00
 toc: true
 toc_sticky: true
 categories:
