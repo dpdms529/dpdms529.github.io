@@ -2,7 +2,7 @@
 layout: single
 title: "[Algorithm] 유클리드호제법"
 excerpt: "최대공약수(GCD)와 최소공배수(LCM) 구하기"
-date: 2022-02-10T22:00:00Z
+date: 2022-02-10T22:00:00+09:00
 toc: true
 toc_sticky: true
 categories:
