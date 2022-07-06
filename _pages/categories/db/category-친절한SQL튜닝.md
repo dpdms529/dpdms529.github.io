@@ -1,8 +1,8 @@
 ---
-title: "DB"
+title: "친절한SQL튜닝"
 layout: category
-permalink: /categories/db/
+permalink: /categories/db/친절한SQL튜닝
 author_profile: true
 sidebar_main: true
-taxonomy: DB
+taxonomy: 친절한SQL튜닝
 ---
