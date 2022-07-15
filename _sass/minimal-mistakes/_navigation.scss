@@ -439,7 +439,6 @@
 
 .nav__list .nav__items {
   margin: 0;
-  margin-left: 1em;
   font-size: 1.25rem;
 
   a {
@@ -479,6 +478,10 @@
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
+}
+
+.nav__items{
+  margin-left: 0.5em;
 }
 
 .nav__title {
