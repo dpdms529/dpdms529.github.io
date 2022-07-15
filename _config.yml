@@ -288,6 +288,8 @@ defaults:
       comments: true
       share: false
       related: true
+      sidebar:
+        nav: "docs"
       
   # _pages
   - scope:

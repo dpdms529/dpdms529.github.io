@@ -14,3 +14,31 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+docs:
+  - title: Algorithm
+    url: /algorithm/
+    children:
+      - title: "솔크뿌"
+        url: /algorithm/솔크뿌/
+      - title: "이론"
+        url: /algorithm/이름/
+  - title: DB
+    url: /db/
+    children:
+      - title: "sqld"
+        url: /db/sqld/
+      - title: "친절한SQL튜닝"
+        url: /db/친절한sql튜닝/
+  - title: Programming Language
+    url: /programming-language/
+    children:
+      - title: "JAVA"
+        url: /programming-language/java/
+  - title: Spring
+    url: /spring/
+    children:
+      - title: "스프링 입문"
+        url: /spring/스프링입문/
+  - title: Notice
+    url: /notice/
