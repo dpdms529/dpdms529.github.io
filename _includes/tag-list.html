@@ -5,6 +5,11 @@
     {% assign path_type = nil %}
 {% endcase %}
 
+{% assign algorithm = "솔크뿌,이론" | split:',' %}
+{% assign db = "sqld,친절한sql튜닝" | split:',' %}
+{% assign pl = "java" | split:',' %}
+{% assign spring = "스프링 입문" | split:',' %}
+
 {% if site.tag_archive.path %}
   {% assign tags_sorted = page.tags | sort_natural %}
 
@@ -12,6 +17,26 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>
     <span itemprop="keywords">
     {% for tag_word in tags_sorted %}
+      {% for sub_category in algorithm "%}
+        {% if sub_category == category_word %}
+          {% assign path_type = "/algorithm/" %}
+        {% endif %}
+      {% endfor %}
+      {% for sub_category in db "%}
+        {% if sub_category == category_word %}
+          {% assign path_type = "/db/" %}
+        {% endif %}
+      {% endfor %}
+      {% for sub_category in pl "%}
+        {% if sub_category == category_word %}
+          {% assign path_type = "/pl/" %}
+        {% endif %}
+      {% endfor %}
+      {% for sub_category in spring "%}
+        {% if sub_category == category_word %}
+          {% assign path_type = "/spring/" %}
+        {% endif %}
+      {% endfor %}
       <a href="{{ tag_word | slugify | prepend: path_type | prepend: site.url | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ tag_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
     </span>
