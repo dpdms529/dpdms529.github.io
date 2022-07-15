@@ -1,8 +1,8 @@
 ---
-title: "Spring"
+title: "PL"
 layout: category
-permalink: /categories/spring/
+permalink: /pl/
 author_profile: true
 sidebar_main: true
-taxonomy: Spring
+taxonomy: PL
 ---

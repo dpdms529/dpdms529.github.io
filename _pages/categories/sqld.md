@@ -1,8 +1,8 @@
 ---
-title: "DB"
+title: "SQLD"
 layout: category
-permalink: /categories/db/
+permalink: /db/sqld/
 author_profile: true
 sidebar_main: true
-taxonomy: DB
+taxonomy: SQLD
 ---

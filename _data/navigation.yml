@@ -30,11 +30,11 @@ docs:
         url: /db/sqld/
       - title: "친절한SQL튜닝"
         url: /db/친절한sql튜닝/
-  - title: Programming Language
-    url: /programming-language/
+  - title: PL
+    url: /pl/
     children:
       - title: "JAVA"
-        url: /programming-language/java/
+        url: /pl/java/
   - title: Spring
     url: /spring/
     children:

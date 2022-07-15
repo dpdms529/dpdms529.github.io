@@ -7,8 +7,10 @@ toc: true
 toc_sticky: true
 categories:
   - Algorithm
+  - 이론
 tags:
   - Algorithm
+  - 이론
   - JAVA
 ---
 

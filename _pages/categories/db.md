@@ -1,8 +1,8 @@
 ---
-title: "JAVA"
+title: "DB"
 layout: category
-permalink: /categories/java/
+permalink: /db/
 author_profile: true
 sidebar_main: true
-taxonomy: JAVA
+taxonomy: DB
 ---
