@@ -305,5 +305,5 @@ defaults:
       share: false
       related: false
       sidebar:
-        title: "category"
+        title: "Category"
         nav: "docs"
