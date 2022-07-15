@@ -30,7 +30,7 @@ layout: archive
   {% for tag in site.tags %}
     {% if tag[1].size == i %}
       <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
-        <a href="{{ tag[0] | slugify | prepend: site.url }}">
+        <a href="{{ tag[0] | slugify | prepend: slugify | prepend: site.url }}">
           <h2 class="archive__subtitle">{{ tag[0] }}</h2>
         </a>
         <div class="entries-{{ entries_layout }}">
