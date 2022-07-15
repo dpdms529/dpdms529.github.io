@@ -422,7 +422,7 @@
     }
 
     a {
-      display: block;
+      // display: block;
       padding: 0.25em 0;
 
       @include breakpoint($large) {
