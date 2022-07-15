@@ -13,7 +13,7 @@ tags:
   - 솔크뿌
 ---
 ## id번 - title
-문제 링크 : [https://www.acmicpc.net/problem/id](https://www.acmicpc.net/problem/id)
+문제 링크 : <https://www.acmicpc.net/problem/>
 
 image
 
