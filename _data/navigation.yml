@@ -16,13 +16,6 @@ main:
   #   url: /sitemap/
 
 docs:
-  - title: Algorithm
-    url: /algorithm/
-    children:
-      - title: "솔크뿌"
-        url: /algorithm/솔크뿌/
-      - title: "이론"
-        url: /algorithm/이론/
   - title: DB
     url: /db/
     children:
@@ -30,15 +23,22 @@ docs:
         url: /db/sqld/
       - title: "친절한SQL튜닝"
         url: /db/친절한sql튜닝/
-  - title: PL
-    url: /pl/
-    children:
-      - title: "JAVA"
-        url: /pl/java/
   - title: Spring
     url: /spring/
     children:
       - title: "스프링 입문"
         url: /spring/스프링-입문/
+  - title: Algorithm
+    url: /algorithm/
+    children:
+      - title: "솔크뿌"
+        url: /algorithm/솔크뿌/
+      - title: "이론"
+        url: /algorithm/이론/
+  - title: PL
+    url: /pl/
+    children:
+      - title: "JAVA"
+        url: /pl/java/
   - title: Notice
     url: /notice/

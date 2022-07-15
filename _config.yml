@@ -289,6 +289,7 @@ defaults:
       share: false
       related: true
       sidebar:
+        title: "category"
         nav: "docs"
       
       
@@ -304,4 +305,5 @@ defaults:
       share: false
       related: false
       sidebar:
+        title: "category"
         nav: "docs"
