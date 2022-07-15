@@ -39,6 +39,6 @@ docs:
     url: /spring/
     children:
       - title: "스프링 입문"
-        url: /spring/스프링입문/
+        url: /spring/스프링-입문/
   - title: Notice
     url: /notice/
