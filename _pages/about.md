@@ -2,6 +2,8 @@
 permalink: /about/
 title: "About"
 layout: single
+toc: true
+toc_sticky: true
 ---
 
 # <span style="color:hotpink">YENNY</span>
