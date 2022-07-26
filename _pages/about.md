@@ -1,12 +1,10 @@
 ---
 permalink: /about/
-title: "About"
+title: "About Yenny"
 layout: single
 toc: true
 toc_sticky: true
 ---
-
-# <span style="color:hotpink">YENNY</span>
 
 ## <span style="color:hotpink">Contact</span>
 
