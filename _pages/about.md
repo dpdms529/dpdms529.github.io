@@ -10,15 +10,14 @@ toc_sticky: true
 
 ## <span style="color:hotpink">Contact</span>
 
-**✉️ Email** | [musiclove529@gmail.com](mailto:musiclove529@gmail.com)
+**✉️ Email**  [musiclove529@gmail.com](mailto:musiclove529@gmail.com)
 
-🗃️ **Github** | [https://github.com/dpdms529](https://github.com/dpdms529)
+🗃️ **Github**  [https://github.com/dpdms529](https://github.com/dpdms529)
 
-✏️ **Blog** | [https://dpdms529.github.io/](https://dpdms529.github.io/)
+✏️ **Blog**  [https://dpdms529.github.io/](https://dpdms529.github.io/)
 
-💻 **Solved.ac** | [https://solved.ac/profile/musiclove529](https://solved.ac/profile/musiclove529)
+💻 **Solved.ac**  [https://solved.ac/profile/musiclove529](https://solved.ac/profile/musiclove529)
 
----
 
 ## <span style="color:hotpink">Introduction</span>
 
@@ -30,7 +29,6 @@ toc_sticky: true
 
 팀원 간의 소통과 화합을 중요시하며, 나 혼자만의 성공이 아닌 팀의 성공을 지향합니다.
 
----
 
 ## <span style="color:hotpink">Skills</span>
 
@@ -49,7 +47,6 @@ toc_sticky: true
 **Etc.**<br>
 `Github` `Notion`
 
----
 
 ## <span style="color:hotpink">Education</span>
 
@@ -61,7 +58,6 @@ toc_sticky: true
 (주)디비안<br>
 2020.02 ~ 2020.03
 
----
 
 ## <span style="color:hotpink">Certificates</span>
 
@@ -77,7 +73,6 @@ toc_sticky: true
 Oracle<br>
 2019.08
 
----
 
 ## <span style="color:hotpink">Awards</span>
 
@@ -105,7 +100,6 @@ Oracle<br>
 전북대학교 IT정보공학과<br>
 2020.12
 
----
 
 ## <span style="color:hotpink">Activities</span>
 
