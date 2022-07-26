@@ -8,7 +8,7 @@ toc_sticky: true
 
 # <span style="color:hotpink">YENNY</span>
 
-## <span style="color:pink">Contact</span>
+## <span style="color:hotpink">Contact</span>
 
 **✉️ Email** | [musiclove529@gmail.com](mailto:musiclove529@gmail.com)
 
@@ -20,7 +20,7 @@ toc_sticky: true
 
 ---
 
-## <span style="color:pink">Introduction</span>
+## <span style="color:hotpink">Introduction</span>
 
 안녕하세요! 개발 장인(匠人)이 되고 싶은 조예은입니다.
 
@@ -32,7 +32,7 @@ toc_sticky: true
 
 ---
 
-## <span style="color:pink">Skills</span>
+## <span style="color:hotpink">Skills</span>
 
 **Language**<br>
 `Java` `Python`
@@ -51,7 +51,7 @@ toc_sticky: true
 
 ---
 
-## <span style="color:pink">Education</span>
+## <span style="color:hotpink">Education</span>
 
 **전북대학교 IT정보공학과**<br>
 4.33/4.5<br>
@@ -63,7 +63,7 @@ toc_sticky: true
 
 ---
 
-## <span style="color:pink">Certificates</span>
+## <span style="color:hotpink">Certificates</span>
 
 **정보처리기사**<br>
 한국산업인력공단<br>
@@ -79,7 +79,7 @@ Oracle<br>
 
 ---
 
-## <span style="color:pink">Awards</span>
+## <span style="color:hotpink">Awards</span>
 
 **전북대학교 캡스톤 디자인 경진대회 - 동상**<br>
 전북대학교 공학교육혁신센터<br>
@@ -107,7 +107,7 @@ Oracle<br>
 
 ---
 
-## <span style="color:pink">Activities</span>
+## <span style="color:hotpink">Activities</span>
 
 **한이음 ICT 멘토링**<br>
 2021.04 ~ 2021.12
