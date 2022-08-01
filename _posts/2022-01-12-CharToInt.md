@@ -6,11 +6,11 @@ date: 2022-01-12T02:58:00+09:00
 toc: true
 toc_sticky: true
 categories:
-  - PL
-  - JAVA
+  - Programming
+  - Java
 tags:
-  - PL
-  - JAVA
+  - Programming
+  - Java
 ---
 ## char형 숫자를 int형으로 바꾸는 법
 ```java

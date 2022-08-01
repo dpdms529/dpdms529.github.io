@@ -1,8 +1,8 @@
 ---
-title: "JAVA"
+title: "Java"
 layout: category
-permalink: /pl/java/
+permalink: /programming/java/
 author_profile: true
 sidebar_main: true
-taxonomy: JAVA
+taxonomy: Java
 ---
