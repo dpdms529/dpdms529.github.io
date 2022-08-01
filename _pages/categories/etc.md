@@ -1,8 +1,8 @@
 ---
-title: "Notice"
+title: "ETC"
 layout: categories
-permalink: /notice/
+permalink: /etc/
 author_profile: true
 sidebar_main: true
-taxonomy: Notice
+taxonomy: ETC
 ---

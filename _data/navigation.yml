@@ -40,5 +40,10 @@ docs:
     children:
       - title: "JAVA"
         url: /pl/java/
-  - title: Notice
-    url: /notice/
+  - title: ETC
+    url: /etc/
+    children:
+      - title: "후기 & 회고"
+        url: /etc/후기&회고/
+      - title: "Blog"
+        url: /etc/blog
