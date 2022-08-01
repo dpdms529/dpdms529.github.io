@@ -7,9 +7,10 @@ toc: true
 toc_sticky: true
 categories:
   - Algorithm
+  - 솔크뿌
 tags:
   - Algorithm
-  - JAVA
+  - Java
   - 솔크뿌
 ---
 ## id번 - title

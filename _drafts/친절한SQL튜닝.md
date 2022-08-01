@@ -7,6 +7,7 @@ toc: true
 toc_sticky: true
 categories:
   - DB 
+  - 친절한SQL튜닝
 tags:
   - DB
   - SQL

@@ -6,7 +6,8 @@ date: 2021-10-22T00:00:00+09:00
 toc: true
 toc_sticky: true
 categories:
-  - DB 
+  - DB
+  - SQLD
 tags:
   - DB
   - SQL

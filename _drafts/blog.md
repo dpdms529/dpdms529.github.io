@@ -6,8 +6,10 @@ date: 2022-07-07T00:00:00+09:00
 toc: true
 toc_sticky: true
 categories:
-  - Notice
+  - ETC
+  - Blog
 tags:
-  - Notice
+  - ETC
+  - Blog
 ---
 

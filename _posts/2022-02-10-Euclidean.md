@@ -11,7 +11,7 @@ categories:
 tags:
   - Algorithm
   - 이론
-  - JAVA
+  - Java
 ---
 
 ## 유클리드호제법이란?
