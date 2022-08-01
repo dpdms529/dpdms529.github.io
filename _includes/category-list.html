@@ -5,10 +5,12 @@
     {% assign path_type = nil %}
 {% endcase %}
 
-{% assign algorithm = "솔크뿌,이론" | split:',' %}
+{% assign categories = site.data.navigation["docs"] %}
+
+<!-- {% assign algorithm = "솔크뿌,이론" | split:',' %}
 {% assign db = "SQLD,친절한SQL튜닝" | split:',' %}
 {% assign pl = "JAVA" | split:',' %}
-{% assign spring = "스프링 입문" | split:',' %}
+{% assign spring = "스프링 입문" | split:',' %} -->
 
 {% if site.category_archive.path %}
   {% assign categories_sorted = page.categories | sort_natural %}
@@ -17,7 +19,18 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
     <span itemprop="keywords">
     {% for category_word in categories_sorted %}
-      {% for sub_category in algorithm "%}
+      {% for category in categories %}
+        {% if category.title == category_word %}
+          {% assign cateogry_url = category.url %}
+        {% endif %}
+        {% for sub_category in category.children %}
+          {% if sub_category.title == category_word %}
+            {% assign category_url = sub_category.url %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      
+      <!-- {% for sub_category in algorithm "%}
         {% if sub_category == category_word %}
           {% assign path_type = "/algorithm/" %}
         {% endif %}
@@ -36,8 +49,9 @@
         {% if sub_category == category_word %}
           {% assign path_type = "/spring/" %}
         {% endif %}
-      {% endfor %}
-      <a href="{{ category_word | slugify | prepend: path_type | prepend: site.url | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      {% endfor %} -->
+      <!-- <a href="{{ category_word | slugify | prepend: path_type | prepend: site.url | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %} -->
+      <a href="{{ category_url | prepend: path_type | prepend: site.url | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
     </span>
   </p>

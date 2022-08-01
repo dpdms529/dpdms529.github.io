@@ -19,7 +19,7 @@ docs:
   - title: DB
     url: /db/
     children:
-      - title: "sqld"
+      - title: "SQLD"
         url: /db/sqld/
       - title: "친절한SQL튜닝"
         url: /db/친절한sql튜닝/
