@@ -39,7 +39,7 @@ docs:
     url: /programming/
     children:
       - title: "Java"
-        url: /pl/java/
+        url: /programming/java/
   - title: ETC
     url: /etc/
     children:
