@@ -44,6 +44,6 @@ docs:
     url: /etc/
     children:
       - title: "후기&회고"
-        url: /etc/후기&회고/
+        url: /etc/후기-회고/
       - title: "Blog"
         url: /etc/blog/
