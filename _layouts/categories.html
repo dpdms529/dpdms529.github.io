@@ -4,20 +4,27 @@ layout: archive
 
 {{ content }}
 
-{% assign categories_max = 0 %}
+<!-- {% assign categories_max = 0 %}
 {% for category in site.categories %}
   {% if category[1].size > categories_max %}
     {% assign categories_max = category[1].size %}
   {% endif %}
+{% endfor %} -->
+
+{% assign categories = site.data.navigation["docs"] %}
+{% for category in categories %}
+  {% if category == page.taxonomy %}
+    {% assign sub_categories = category.children %}
+  {% endif %}
 {% endfor %}
 
 <ul class="taxonomy__index">
-  {% for i in (1..categories_max) reversed %}
+  {% for sub_category in sub_categories %}
     {% for category in site.categories %}
-      {% if category[1].size == i %}
+      {% if sub_category.title == category[0] %}
         <li>
-          <a href="#{{ category[0] | slugify }}">
-            <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+          <a href="{{ category[0] | slugify }}">
+            <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
           </a>
         </li>
       {% endif %}
@@ -26,6 +33,11 @@ layout: archive
 </ul>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
+</div>
+
+<!-- {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% for i in (1..categories_max) reversed %}
   {% for category in site.categories %}
     {% if category[1].size == i %}
@@ -40,4 +52,4 @@ layout: archive
       </section>
     {% endif %}
   {% endfor %}
-{% endfor %}
+{% endfor %} -->

@@ -1,6 +1,6 @@
 ---
 title: "PL"
-layout: category
+layout: categories
 permalink: /pl/
 author_profile: true
 sidebar_main: true

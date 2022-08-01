@@ -1,6 +1,6 @@
 ---
 title: "DB"
-layout: category
+layout: categories
 permalink: /db/
 author_profile: true
 sidebar_main: true
