@@ -21,7 +21,8 @@
     {% for category_word in categories_sorted %}
       {% for category in categories %}
         {% if category.title == category_word %}
-          {% assign cateogry_url = category.url %}
+          {% assign category_url = category.url %}
+          {% continue %}
         {% endif %}
         {% for sub_category in category.children %}
           {% if sub_category.title == category_word %}
