@@ -13,7 +13,7 @@ layout: archive
 
 {% assign categories = site.data.navigation["docs"] %}
 {% for category in categories %}
-  {% if category == page.taxonomy %}
+  {% if category.title == page.taxonomy %}
     {% assign sub_categories = category.children %}
   {% endif %}
 {% endfor %}
