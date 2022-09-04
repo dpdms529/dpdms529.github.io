@@ -24,7 +24,7 @@ docs:
       - title: "친절한SQL튜닝"
         url: /db/친절한sql튜닝/
       - title : "데이터베이스 개론"
-        url : /db/데이터베이스 개론/
+        url : /db/데이터베이스-개론/
   - title: Spring
     url: /spring/
     children:
