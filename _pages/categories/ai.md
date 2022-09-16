@@ -1,8 +1,8 @@
 ---
-title: "Java"
+title: "AI"
 layout: category
-permalink: /cs/java/
+permalink: /cs/ai/
 author_profile: true
 sidebar_main: true
-taxonomy: Java
+taxonomy: AI
 ---
