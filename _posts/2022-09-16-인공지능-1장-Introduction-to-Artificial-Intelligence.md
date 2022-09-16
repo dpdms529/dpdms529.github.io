@@ -5,6 +5,7 @@ excerpt: "1장 Introduction to Artificial Intelligence"
 date: 2022-09-16T16:31:00+09:00
 toc: true
 toc_sticky: true
+use_math: true
 categories:
   - CS 
   - AI

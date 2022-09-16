@@ -5,6 +5,7 @@ excerpt: "CLASS 4 : p, p, p"
 date: 2022-07-14T00:00:00+09:00
 toc: true
 toc_sticky: true
+use_math: true
 categories:
   - Algorithm
   - 솔크뿌
