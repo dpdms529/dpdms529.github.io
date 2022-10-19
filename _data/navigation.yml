@@ -37,13 +37,24 @@ docs:
         url: /algorithm/솔크뿌/
       - title: "이론"
         url: /algorithm/이론/
+  - title: Language
+    url: /language/
+    children:
+      - title: "Java"
+        url: /language/java/
   - title: CS
     url: /cs/
     children:
-      - title: "Java"
-        url: /cs/java/
       - title: "AI"
         url: /cs/ai/
+      - title: "Data Mining"
+        url: /cs/data-mining/
+      - title: "Compiler"
+        url: /cs/compiler/
+      - title: "Network"
+        url: /cs/network/
+      - title: "OS"
+        url: /cs/os/
   - title: ETC
     url: /etc/
     children:

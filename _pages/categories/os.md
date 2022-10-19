@@ -1,8 +1,8 @@
 ---
-title: "Java"
+title: "OS"
 layout: category
-permalink: /language/java/
+permalink: /cs/os/
 author_profile: true
 sidebar_main: true
-taxonomy: Java
+taxonomy: OS
 ---

@@ -1,8 +1,8 @@
 ---
-title: "Java"
+title: "Network"
 layout: category
-permalink: /language/java/
+permalink: /cs/network/
 author_profile: true
 sidebar_main: true
-taxonomy: Java
+taxonomy: Network
 ---
