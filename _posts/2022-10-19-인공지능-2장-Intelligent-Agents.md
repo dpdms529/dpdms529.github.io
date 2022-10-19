@@ -21,7 +21,7 @@ tags:
 - 센서와 작동기를 통해 환경과 상호작용
 - 어떤 주어진 순간에 에이전트가 선택한 행동은 인식된 데이터따라 결정됨
 - 인식된 시퀀스 정보로부터 행동을 도출하는 함수
-    - $f : \Rho^* \rightarrow \Alpha$
+    - $f : P^* \rightarrow A$
 
 ![Untitled](https://user-images.githubusercontent.com/60471550/196634835-0df65bdf-04b2-4cf5-8666-c5f260581449.png)
 
@@ -56,7 +56,7 @@ tags:
 
 ## 에이전트 유형
 
-### 단순 반영 에이전트(Simple reflex agents)
+**단순 반영 에이전트(Simple reflex agents)**
 
 - 현재 인식된 정보를 기반으로 행동을 선택
 - 이전 정보나 미래 상황을 고려하지 않음
@@ -65,20 +65,20 @@ tags:
 ![Untitled 1](https://user-images.githubusercontent.com/60471550/196634966-f3420afe-cc91-4519-ac40-340e5d6730fa.png)
 
 
-### 모델 기반 반영 에이전트(Model-based reflex agents)
+**모델 기반 반영 에이전트(Model-based reflex agents)**
 
 - 내부의 히스토리 정보를 가지고 다음 상태 예측하여 행동 결정
 
 ![Untitled 2](https://user-images.githubusercontent.com/60471550/196635056-1fb46cca-4a72-40d0-8aca-f701a0938b74.png)
 
-### 목표 기반 에이전트(Goal-based agents)
+**목표 기반 에이전트(Goal-based agents)**
 
 - 목표를 달성 가능한지 판단
 - 목표 정보를 가져야 함
 
 ![Untitled 3](https://user-images.githubusercontent.com/60471550/196635145-f767e364-43a7-40ee-a00c-31da68f04c2a.png)
 
-### 효용성 기반 에이전트(Utility-based agents)
+**효용성 기반 에이전트(Utility-based agents)**
 
 - 목표 자체로는 높은 성능을 내는 행동을 하도록 하기에 부족
 - 효용 함수(utility function)
