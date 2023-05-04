@@ -7,11 +7,11 @@ toc: true
 toc_sticky: true
 use_math: true
 categories:
-  - CS 
-  - AI
+  - 전공
+  - 인공지능
 tags:
-  - CS
-  - AI
+  - 전공
+  - 인공지능
 ---
 
 ## 인공지능(AI)이란?

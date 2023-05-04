@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Study With Yenny"
+title                    : "JoyLog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Yenny"
-description              : "공부하는 블로그"
+name                     : "Joy"
+description              : "Joy의 공부 블로그"
 url                      : "https://dpdms529.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "dpdms529/dpdms529.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -102,7 +102,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Yenny"
+  name             : "Joy"
   avatar           : "/assets/images/옴팡이.png"
   bio              : "공부하는 중"
   location         : "Seoul,Korea"

@@ -16,6 +16,28 @@ main:
   #   url: /sitemap/
 
 docs:
+  - title: 전공
+    url: /전공/
+    children:
+      - title: "데이터통신"
+        url: /전공/데이터통신/
+      - title: "운영체제"
+        url: /전공/운영체제/
+      - title: "병렬및분산시스템"
+        url: /전공/병렬및분산시스템/
+      - title: "컴퓨터네트워크"
+        url: /전공/컴퓨터네트워크/
+      - title: "컴파일러"
+        url: /전공/컴파일러/
+      - title: "인공지능"
+        url: /전공/인공지능/
+      - title: "데이터마이닝"
+        url: /전공/데이터마이닝/
+  - title: PS
+    url: /PS/
+    children:
+      - title: "BOJ"
+        url: /PS/BOJ/
   - title: DB
     url: /db/
     children:
