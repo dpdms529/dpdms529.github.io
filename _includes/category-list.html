@@ -25,7 +25,7 @@
           {% endif %}
         {% endfor %}
       {% endfor %}
-      <a href="{{ category_url | prepend: site.url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      <a href="{{ category_url | downcase | prepend: site.url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
     </span>
   </p>

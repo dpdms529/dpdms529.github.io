@@ -289,7 +289,7 @@ defaults:
       share: false
       related: true
       sidebar:
-        title: "category"
+        title: "Category"
         nav: "docs"
       
       

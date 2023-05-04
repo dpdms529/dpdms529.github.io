@@ -4,7 +4,46 @@ layout: archive
 
 {{ content }}
 
+{% assign categories = site.data.navigation["docs"] %}
+{% for category in categories %}
+  {% if category.title == page.taxonomy %}
+    {% assign sub_categories = category.children %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  {% for sub_category in sub_categories %}
+    {% for category in site.categories %}
+      {% if sub_category.title == category[0] %}
+        <li>
+          <h6>
+            <a href="#{{ category[0] | slugify }}">
+              <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
+            </a>
+          </h6>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
-</div>
+{% for sub_category in sub_categories %}
+  {% for category in site.categories %}
+    {% if sub_category.title == category[0] %}
+      <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
+        <a href="{{ category[0] | slugify }}">
+          <h2 class="archive__subtitle">{{ category[0] }}</h2>
+        </a>
+        <div class="entries-{{ entries_layout }}">
+          {% for post in category.last %}
+            {% include archive-single.html type=entries_layout %}
+          {% endfor %}
+        </div>
+        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+   
+
