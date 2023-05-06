@@ -16,9 +16,14 @@ main:
   #   url: /sitemap/
 
 docs:
-  - title: "카테고리"
-    url: /카테고리/
+  - title: "IT"
+    url: /it/
     children:
-      - title: "세부카테고리"
-        url: /카테고리/세부카테고리/
+      - title: "Java"
+        url: /it/java/
+      - title : "Spring"
+        url : /it/spring/
+  - title: "회고"
+    url: /회고/
+      
   

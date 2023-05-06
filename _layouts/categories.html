@@ -27,13 +27,19 @@ layout: archive
     <a href="{{ main_category.url | downcase }}">
       <h2 class="archive__subtitle">{{ main_category.title }}</h2>
     </a>
-    <ul>
+    <div>
       {% for sub_category in main_category.children %}
-        <li>
-          <a href="{{ sub_category.url | downcase }}">{{ sub_category.title }}</a>
-        </li>
+        {%  for category in site.categories %}
+          {% if sub_category.title == category[0] %}
+            <h6>
+              <a href="{{ sub_category.url | downcase }}">
+                <strong>{{ sub_category.title }}</strong> <span>({{ category[1].size }})</span>
+              </a>
+            </h6>
+          {% endif %}
+        {%  endfor %}
       {% endfor %}
-    </ul>
+    </div>
     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
 {% endfor %}

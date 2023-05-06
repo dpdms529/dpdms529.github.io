@@ -28,6 +28,12 @@ layout: archive
 </ul>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+{% if sub_categories.size == null %}
+  <div class="entries-{{ entries_layout }}">
+    {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
+  </div>
+{% endif %}
+
 {% for sub_category in sub_categories %}
   {% for category in site.categories %}
     {% if sub_category.title == category[0] %}
