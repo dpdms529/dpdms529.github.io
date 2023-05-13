@@ -4,13 +4,20 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title:  "About"
     url:  /about/
-  - title:  "Category"
-    url:  /categories/
-  - title:  "Tag"
+  # - title:  "Category"
+  #   url:  /categories/
+  - title:  "Tags"
     url:  /tags/
-  # - title:  "Sample Posts"
-  #   url:  /year-archive/
+  - title:  "Posts"
+    url:  /posts/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+categories:
+  - title: "대분류"
+    url: /대분류/
+    children:
+      - title: "중분류"
+        url: /대분류/중분류/

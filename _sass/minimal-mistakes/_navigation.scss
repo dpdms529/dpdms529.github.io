@@ -439,17 +439,18 @@
 
 .nav__list .nav__items {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
 
   a {
     color: inherit;
   }
 
   .active {
-    margin-left: -0.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    font-weight: bold;
+    // margin-left: -0.5em;
+    // padding-left: 0.5em;
+    // padding-right: 0.5em;
+    // font-weight: bold;
+    color: $link-color;
   }
 
   @include breakpoint(max-width $large - 1px) {
@@ -489,7 +490,7 @@
 }
 
 .nav__sub-title {
-  display: block;
+  // display: block;
   margin: 0.5rem 0;
   padding: 0.25rem 0;
   font-family: $sans-serif-narrow;
@@ -497,6 +498,10 @@
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 1px solid $border-color;
+}
+
+details > ul {
+  padding-left: 0.9rem;
 }
 
 /*
