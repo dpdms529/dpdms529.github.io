@@ -8,7 +8,7 @@ toc_sticky: true
 
 안녕하세요 Joy의 블로그입니다!
 
-## <span style="color:pink">Contact</span>
+#### <span style="color:pink">Contact</span>
 
 **✉️ Email**  [musiclove529@gmail.com](mailto:musiclove529@gmail.com)
 
@@ -19,20 +19,20 @@ toc_sticky: true
 💻 **Solved.ac**  [https://solved.ac/profile/musiclove529](https://solved.ac/profile/musiclove529)
 
 
-## <span style="color:pink">Work Experience</span>
+#### <span style="color:pink">Work Experience</span>
 
 **GS 리테일**<br>
 인턴<br>
 2023.02 ~ 2023.04
 
 
-## <span style="color:pink">Paper</span>
+#### <span style="color:pink">Paper</span>
 **문제 해결 히스토리를 고려한 프로그래밍 문제 추천 시스템**<br>
 [한국정보과학회 2022 한국소프트웨어종합학술대회 논문집, 1652-1654](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11224552)<br>
 2022.12
 
 
-## <span style="color:pink">Education</span>
+#### <span style="color:pink">Education</span>
 
 **전북대학교 IT정보공학과**<br>
 4.33/4.5<br>
@@ -51,7 +51,7 @@ toc_sticky: true
 2020.02 ~ 2020.03 (28H)
 
 
-## <span style="color:pink">Certificates</span>
+#### <span style="color:pink">Certificates</span>
 
 **정보처리기사**<br>
 한국산업인력공단<br>
@@ -66,7 +66,7 @@ Oracle<br>
 2019.08
 
 
-## <span style="color:pink">Awards</span>
+#### <span style="color:pink">Awards</span>
 
 **전북대학교 총장상(우수졸업생)**<br>
 전북대학교<br>
@@ -109,7 +109,7 @@ Oracle<br>
 2020.12
 
 
-## <span style="color:pink">Activities</span>
+#### <span style="color:pink">Activities</span>
 
 **한이음 ICT 멘토링**<br>
 2021.04 ~ 2021.12
