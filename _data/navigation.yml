@@ -1,64 +1,12 @@
 # main links
 main:
-  # - title: "Quick-Start Guide"
-  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-   - title: "About"
-     url: https://dpdms529.github.io/about/
-  #  - title: "Category"
-  #    url: https://dpdms529.github.io/categories
-   - title: "Tag"
-     url: https://dpdms529.github.io/tags
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
-
-docs:
-  - title: DB
-    url: /db/
-    children:
-      - title: "SQLD"
-        url: /db/sqld/
-      - title: "친절한SQL튜닝"
-        url: /db/친절한sql튜닝/
-      - title : "데이터베이스 개론"
-        url : /db/데이터베이스-개론/
-  - title: Spring
-    url: /spring/
-    children:
-      - title: "스프링 입문"
-        url: /spring/스프링-입문/
-  - title: Algorithm
-    url: /algorithm/
-    children:
-      - title: "솔크뿌"
-        url: /algorithm/솔크뿌/
-      - title: "이론"
-        url: /algorithm/이론/
-  - title: Language
-    url: /language/
-    children:
-      - title: "Java"
-        url: /language/java/
-  - title: CS
-    url: /cs/
-    children:
-      - title: "AI"
-        url: /cs/ai/
-      - title: "Data Mining"
-        url: /cs/data-mining/
-      - title: "Compiler"
-        url: /cs/compiler/
-      - title: "Network"
-        url: /cs/network/
-      - title: "OS"
-        url: /cs/os/
-  - title: ETC
-    url: /etc/
-    children:
-      - title: "후기&회고"
-        url: /etc/후기-회고/
-      - title: "Blog"
-        url: /etc/blog/
