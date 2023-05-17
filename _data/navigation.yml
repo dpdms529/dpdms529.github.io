@@ -19,7 +19,7 @@ categories:
   - title: "대분류"
     url: /대분류/
     children:
-      - title: "중분류"
-        url: /대분류/중분류/
+      - title: "IT"
+        url: /대분류/it/
       - title: "소분류"
         url: /대분류/소분류/

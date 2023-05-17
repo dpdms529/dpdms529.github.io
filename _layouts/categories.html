@@ -29,7 +29,7 @@ layout: archive
   {% for category in site.categories %}
     {% if category[0] == sub_category.title %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
-        <a href="{{category[0] | slugify }}" style="text-decoration: none;"><h2 class="archive__subtitle">{{ category[0] }}</h2></a>
+        <a href="{{ category[0] | slugify | downcase }}" style="text-decoration: none;"><h2 class="archive__subtitle">{{ category[0] }}</h2></a>
         <div class="entries-{{ entries_layout }}">
           {% for post in category.last %}
             {% include archive-single.html type=entries_layout %}
