@@ -11,8 +11,8 @@ layout: archive
 {% endfor %}
 
 <ul class="taxonomy__index">
-  {% for category in site.categories %}
-    {% for sub_category in sub_categories %}
+  {% for sub_category in sub_categories %}
+    {% for category in site.categories %}
       {% if category[0] == sub_category.title %}
         <li>
           <a href="#{{ category[0] | slugify }}">
@@ -25,8 +25,8 @@ layout: archive
 </ul>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-{% for category in site.categories %}
-  {% for sub_category in sub_categories %}
+{% for sub_category in sub_categories %}
+  {% for category in site.categories %}
     {% if category[0] == sub_category.title %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
         <a href="{{category[0] | slugify }}" style="text-decoration: none;"><h2 class="archive__subtitle">{{ category[0] }}</h2></a>
