@@ -8,8 +8,8 @@ main:
   #   url:  /categories/
   - title:  "Tags"
     url:  /tags/
-  - title:  "Posts"
-    url:  /posts/
+  - title:  "Years"
+    url:  /years/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
@@ -21,3 +21,5 @@ categories:
     children:
       - title: "중분류"
         url: /대분류/중분류/
+      - title: "소분류"
+        url: /대분류/소분류/
