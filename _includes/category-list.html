@@ -13,10 +13,10 @@
     <span itemprop="keywords">
     {% assign category_url = "/" %}
     {% for category_word in page.categories %}
-      {% assign category = category_word | slugify %}
-      {% assign category_url = category_url | append: category | append: "/" %}
+      {% assign slugified_category = category_word | slugify %}
+      {% assign category_url = category_url | append: slugified_category | append: "/" %}
       <!-- <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %} -->
-      <a href="{{ category_url | downcase | prepend: site.url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+      <a href="{{ category_url | prepend: site.url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
     </span>
   </p>

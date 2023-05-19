@@ -1,8 +1,8 @@
 ---
-title: "대분류"
+title: "Books"
 layout: categories
-permalink: /대분류/
+permalink: /books/
 author_profile: true
 sidebar_main: true
-taxonomy: 대분류
+taxonomy: Books
 ---

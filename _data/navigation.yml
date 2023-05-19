@@ -16,10 +16,20 @@ main:
   #   url: /sitemap/
 
 categories:
-  - title: "대분류"
-    url: /대분류/
+  - title: "Books"
+    url: /books/
     children:
-      - title: "IT"
-        url: /대분류/it/
-      - title: "소분류"
-        url: /대분류/소분류/
+      - title: "모던 자바 인 액션"
+        url: /books/모던-자바-인-액션/
+  - title: "Lectures"
+    url: "/lectures/"
+    children:
+      - title: "스프링 핵심 원리 기본편"
+        url: "/lectures/스프링-핵심-원리-기본편/"
+  - title: "Experiences"
+    url: "/experiences/"
+    children:
+      - title: "대학 생활"
+        url: "/experiences/대학-생활/"
+      - title: "GS 리테일 인턴"
+        url: "/experiences/gs-리테일-인턴/"
