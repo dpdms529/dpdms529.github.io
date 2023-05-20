@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem 'rubygems-update', '~> 3.3', '>= 3.3.22'
+
 gem 'jekyll', '~> 4.2'
 
 group :jekyll_plugins do
