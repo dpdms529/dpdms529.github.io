@@ -1,0 +1,98 @@
+---
+layout: single
+title: "[Jekyll 블로그] Jekyll 블로그 생성"
+excerpt: ""
+date: "2023-05-23 16:53:00"
+toc: true
+toc_sticky: true
+use_math: true
+categories: [Experiences, Jekyll 블로그]
+tags: [Experiences, Jekyll 블로그]
+---
+
+## Jekyll 블로그 시작!
+블로그를 한동안 방치했었는데 시간도 생겼고, 다시 잘 운영해보고 싶어서 싹 밀고 새로 만들었다. 한 번 했었으니깐 다시 만들면 금방 만들 줄 았았는데 생각보다 시간이 오래 걸렸다. 혹시 또 jekyll 블로그를 새로 만들고 싶어질지도 모르니깐 블로그 생성 과정을 정리해보려고 한다.
+
+## 설치
+[Jekyll 윈도우 설치 방법](https://jekyllrb.com/docs/installation/windows/)
+
+jekyll을 사용하기 위해서는 먼저 ruby를 설치해야 한다. 나는 Window를 쓰고 있기 때문에 [RubyInstaller](https://rubyinstaller.org/)를 통해 ruby를 설치해줬다.
+
+설치 마지막 단계에서 `ridk install`을 체크해준 후 finish 버튼을 누르면 아래와 같은 화면이 띄어진다.
+
+![Ruby ridk install](https://github.com/dpdms529/dpdms529.github.io/assets/60471550/d8f549db-f437-41a1-8b63-0f2d28674836)
+
+문서 내용으로는 3번만 설치해주면되는거 같지만 나는 그냥 Enter를 눌러서 다 설치해줬다.
+
+ruby 설치가 모두 끝나면 cmd 창에서 `gem install jekyll bundler`을 통해 jekyll과 bundler를 설치해준다. 설치가 끝나면 `jekyll -v`을 통해 jekyll이 제대로 설치됐는지 확인해준다.
+
+## Minimal Mistakes
+[Minimal Mistakes 가이드 문서](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+
+jekyll theme에는 여러가지가 있는데 나는 Minimal Mistakes를 골랐다. 원래도 이 테마를 썼었는데 가이드 문서가 잘 되어있고, 많은 사람들이 사용하다보니 참고할 글도 많아서 커스터마이징할 때 생기는 문제들을 해결할 때 도움이 많이 됐었어서 그대로 쓰기로 했다.
+
+테마를 설치하는 방법은 여러가지가 있는데 나는 Github repository에서 clone해오는 방법을 선택했다.
+1. github repository 만들기<br>
+    Repository name은 `사용자이름.github.io`로 설정해준다.
+
+    ![repository 생성](https://github.com/dpdms529/dpdms529.github.io/assets/60471550/6c0122ca-13d5-4eeb-ad93-4a1b8002b858)
+    
+2. 자신의 블로그 레포지토리 주소를 복사해와서 clone 해준 후 해당 폴더로 이동
+
+    ![repository clone](https://github.com/dpdms529/dpdms529.github.io/assets/60471550/12e045f1-d93b-4491-923e-4c49a015842b)
+
+    `cd <폴더를 만들 위치>`
+
+    `git clone <블로그 레포지토리 주소> 폴더명`
+
+    `cd <폴더명>`
+
+3. [minimal-mistakes](https://github.com/mmistakes/minimal-mistakes)를 remote repository로 추가해준 후 pull해오기
+
+    ![minimal mistakes pull](https://github.com/dpdms529/dpdms529.github.io/assets/60471550/ef104b34-39ef-40d1-b643-76aa11f37899)
+
+    `git remote add minimal https://github.com/mmistakes/minimal-mistakes.git`
+
+    `git remote -v`
+    
+    `git pull minimal master`
+
+## 필요 없는 폴더 및 파일 삭제
+minimal-mistakes의 master 브랜치를 pull 해오면 다음과 같은 디렉터리 구조를 가지는데 빨간 박스 표시를 한 폴더 및 파일들은 예시를 위한 것들이기 때문에 지워주면된다.
+
+ ![디렉터리 구조](https://github.com/dpdms529/dpdms529.github.io/assets/60471550/013e51b2-d74d-402f-9606-f3c7bb5b58b3){: width="400" height="400"}
+
+## Gemfile 수정
+Gemfile을 다음과 같이 수정해준다.
+
+```ruby
+source "https://rubygems.org"
+
+gem 'jekyll', '~> 4.2'
+gem "minimal-mistakes-jekyll"
+
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+    gem "tzinfo", ">= 1", "< 3"
+    gem "tzinfo-data"
+end
+
+gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
+```
+
+### github-pages를 사용하지 않은 이유
+`jekyll` 대신 `github-pages`를 설치할 수도 있는데, github-pages를 사용하면 따로 설정하지 않아도 push한 내용들을 `Github Pages`에 자동으로 배포해주지만 jekyll의 최신 버전을 사용할 수 없다. 처음에는 최신 버전을 굳이 사용할 필요를 못느껴서 github-pages를 사용했었는데 url 설정 문제 때문에 최신 버전을 사용해야 할 필요성을 느끼게되었다.
+
+`_config.yml`에서 `Outputting` 부분을 보면 post의 url을 `permalink: /:categories/:title/` 과 같이 설정해놓은 것을 볼 수 있다. 이렇게 되면 포스트의 url 주소가 `/<카테고리명>/<포스트제목>/` 으로 설정된다. 그런데 이 설정의 경우 포스트 제목에는 `slugify`가 적용되는데 카테고리명에는 `slugify`가 적용되지 않는다. `slugify`는 url을 url 친화적이도록 대문자는 소문자로, 띄어쓰기나 기호는 - 로 바꿔주는 역할을 한다. 
+
+`slugify`가 적용되지 않을 경우, 카테고리명이 `Hello World`라면 url이 `/Hello%20World/...`으로 설정되는데 보기에도 좋지않고, 나중에 카테고리 페이지를 만들었을 때 그 페이지는 url이 `/hello-world/...`로 설정되기 때문에 매칭이 안되는 문제가 있다. 
+
+그래서 이것을 해결할 방법을 찾아보던 중 [공식 문서](https://jekyllrb.com/docs/permalinks/)에서 `_config.yml`의 post url 설정 부분에서 `:categories` 대신 `:slugified_categories`를 사용하면 된다는 내용을 찾았다. 
+
+그런데 이 기능은 jekyll 4.1버전부터 가능해서 github-pages에 의존된 jekyll 버전(v3.9.3)으로는 사용할 수가 없었다. 
+
+그래서 github-pages 대신 jekyll의 최신 버전을 사용하고, `Github Actions`를 사용하여 Github Pages에 블로그의 변경사항을 자동 배포하는 방법을 찾게되었다. 그 내용은 다음 포스팅에 쓰도록 하겠다.
+
+## 로컬에서 실행하기
+터미널을 열어서 `bundle exec jekyll serve`를 실행시킨 후 [http://127.0.0.1:4000/](http://127.0.0.1:4000/)에 들어가보면 다음과 같이 minimal mistakes 테마가 적용된 jekyll 블로그가 만들어진 것을 볼 수 있다.
+
+![jekyll 블로그](https://github.com/dpdms529/dpdms529.github.io/assets/60471550/237c1862-f882-4a67-a7a4-f6e3bb32f6b1)
