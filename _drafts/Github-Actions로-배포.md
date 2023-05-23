@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Jekyll 블로그]"
+title: "[Jekyll 블로그] Github Actions로 배포"
 excerpt: ""
 date: "2023-05-20 00:00:00"
 toc: true
