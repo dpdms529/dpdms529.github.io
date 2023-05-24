@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Joy"
-  avatar           : "/assets/images/옴팡이.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/logo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "공부하는 중"
   location         : "Seoul,Korea"
   email            :
