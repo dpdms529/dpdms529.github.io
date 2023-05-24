@@ -101,7 +101,6 @@ analytics:
     tracking_id          : "G-GGH6LXTM4F"
     anonymize_ip         : # true, false (default)
 
-
 # Site Author
 author:
   name             : "Joy"
