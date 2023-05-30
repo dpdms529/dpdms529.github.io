@@ -156,6 +156,10 @@ pre {
   font-family: $monospace;
 }
 
+// :not(pre) > code {
+//   font-weight: bold;
+// }
+
 pre {
   overflow-x: auto; /* add scrollbars to wide code blocks*/
 }
