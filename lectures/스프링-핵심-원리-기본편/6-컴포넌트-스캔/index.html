@@ -1,0 +1,896 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[스프링 핵심 원리 기본편] 6. 컴포넌트 스캔 - Joy’s Blog</title>
+<meta name="description" content="Joy의 블로그">
+
+
+  <meta name="author" content="Joy">
+  
+  <meta property="article:author" content="Joy">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Joy's Blog">
+<meta property="og:title" content="[스프링 핵심 원리 기본편] 6. 컴포넌트 스캔">
+<meta property="og:url" content="https://dpdms529.github.io/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/6-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%8A%A4%EC%BA%94/">
+
+
+  <meta property="og:description" content="Joy의 블로그">
+
+
+
+  <meta property="og:image" content="https://dpdms529.github.io/assets/images/logo.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-11T23:18:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://dpdms529.github.io/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/6-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%8A%A4%EC%BA%94/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Joy",
+      "url": "https://dpdms529.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Joy's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/assets/favicon/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="/assets/css/linkpreview.css" media="screen">
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+            equationNumbers: {
+            autoNumber: "AMS"
+            }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+        }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+            alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+            alert("Math Processing Error: "+message[1]);
+        });
+</script>
+<script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/favicon/mstile-150x150.png" alt="Joy's Blog"></a>
+        
+        <a class="site-title" href="/">
+          Joy's Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/years/">Years</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://dpdms529.github.io/">
+        <img src="/assets/images/logo.png" alt="Joy" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://dpdms529.github.io/" itemprop="url">Joy</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하는 중</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul,Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/dpdms529" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">Categories</h3>
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <details >
+        <summary>
+          
+            <a href="/books/"><span class="nav__sub-title">Books</span></a>
+          
+        </summary>
+
+        
+        <ul>
+          
+            
+            <li><a href="/books/%EB%AA%A8%EB%8D%98-%EC%9E%90%EB%B0%94-%EC%9D%B8-%EC%95%A1%EC%85%98/">모던 자바 인 액션</a></li>
+          
+        </ul>
+        
+      </details>
+    
+      <details  open >
+        <summary>
+          
+            <a href="/lectures/"><span class="nav__sub-title">Lectures</span></a>
+          
+        </summary>
+
+        
+        <ul>
+          
+            
+            <li><a href="/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/" class="active">스프링 핵심 원리 기본편</a></li>
+          
+        </ul>
+        
+      </details>
+    
+      <details >
+        <summary>
+          
+            <a href="/experiences/"><span class="nav__sub-title">Experiences</span></a>
+          
+        </summary>
+
+        
+        <ul>
+          
+            
+            <li><a href="/experiences/%EB%8C%80%ED%95%99-%EC%83%9D%ED%99%9C/">대학 생활</a></li>
+          
+            
+            <li><a href="/experiences/gs-%EB%A6%AC%ED%85%8C%EC%9D%BC-%EC%9D%B8%ED%84%B4/">GS 리테일 인턴</a></li>
+          
+            
+            <li><a href="/experiences/jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8/">Jekyll 블로그</a></li>
+          
+        </ul>
+        
+      </details>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[스프링 핵심 원리 기본편] 6. 컴포넌트 스캔">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2023-05-11T23:18:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://dpdms529.github.io/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/6-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%8A%A4%EC%BA%94/" class="u-url" itemprop="url">[스프링 핵심 원리 기본편] 6. 컴포넌트 스캔
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-11T23:18:00+09:00">May 11, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#컴포넌트-스캔과-의존관계-자동-주입">컴포넌트 스캔과 의존관계 자동 주입</a><ul><li><a href="#동작-과정">동작 과정</a></li></ul></li><li><a href="#탐색-위치와-기본-스캔-대상">탐색 위치와 기본 스캔 대상</a><ul><li><a href="#탐색할-패키지의-시작-위치-지정">탐색할 패키지의 시작 위치 지정</a></li><li><a href="#컴포넌트-스캔-기본-대상">컴포넌트 스캔 기본 대상</a></li></ul></li><li><a href="#필터">필터</a><ul><li><a href="#filtertype-옵션">FilterType 옵션</a></li></ul></li><li><a href="#중복-등록과-충돌">중복 등록과 충돌</a><ul><li><a href="#자동-빈-등록-vs-자동-빈-등록">자동 빈 등록 vs 자동 빈 등록</a></li><li><a href="#수동-빈-등록-vs-자동-빈-등록">수동 빈 등록 vs 자동 빈 등록</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div class="jekyll-linkpreview-wrapper">
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+      <div class="jekyll-linkpreview-image">
+        <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8" target="_blank">
+          <img src="https://cdn.inflearn.com/public/courses/325969/cover/2868c757-5886-4508-a140-7cb68a83dfd8/325969-eng.png" />
+        </a>
+      </div>
+
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8" target="_blank">스프링 핵심 원리 - 기본편 - 인프런 | 강의</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">스프링 입문자가 예제를 만들어가면서 스프링의 핵심 원리를 이해하고, 스프링 기본기를 확실히 다질 수 있습니다.,  - 강의 소개 | 인프런</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//www.inflearn.com" target="_blank">www.inflearn.com</a>
+    </div>
+  </div>
+</div>
+
+<h2 id="컴포넌트-스캔과-의존관계-자동-주입">컴포넌트 스캔과 의존관계 자동 주입</h2>
+<p><a href="https://github.com/dpdms529/SpringCore/commit/82442acff38bb92e39c5bca55fa6eb3d0eeddb87">코드</a></p>
+<ul>
+  <li>스프링은 설정 정보가 없어도 자동으로 스프링 빈을 등록하는 컴포넌트 스캔이라는 기능 제공</li>
+  <li>의존관계를 자동으로 주입하는 <code class="language-plaintext highlighter-rouge">@Autowired</code> 기능 제공</li>
+</ul>
+
+<h3 id="동작-과정">동작 과정</h3>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">@ComponentScan</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">@Component</code>가 붙은 모든 클래스를 스프링 빈으로 등록</li>
+      <li>스프링 빈 기본 이름은 클래스명을 사용하되 맨 앞글자만 소문자 사용
+        <ul>
+          <li>ex) MemberServiceImpl 클래스 -&gt; memberServiceImpl</li>
+          <li>빈 이름 직접 지정 : <code class="language-plaintext highlighter-rouge">@Component("beanName")</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">@Autowired</code> 의존관계 자동 주입
+    <ul>
+      <li>생성자에 <code class="language-plaintext highlighter-rouge">@Autowired</code>를 지정하면, 스프링 컨테이너가 자동으로 해당 스프링 빈을 찾아서 주입</li>
+      <li>기본 조회 전략은 타입이 같은 빈을 찾아서 주입</li>
+      <li>생성자에 파라미터가 많아도 다 찾아서 자동으로 주입</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="탐색-위치와-기본-스캔-대상">탐색 위치와 기본 스캔 대상</h2>
+<h3 id="탐색할-패키지의-시작-위치-지정">탐색할 패키지의 시작 위치 지정</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">basePackages</code> : 탐색할 패키지의 시작 위치를 지정
+    <ul>
+      <li>이 패키지를 포함해서 하위 패키지를 모두 탐색</li>
+      <li>{}로 시작 위치를 여러개 지정 가능</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">basePackageClasses</code> : 지정한 클래스의 패키지를 탐색 시작 위치로 지정</li>
+  <li>지정하지 않으면 <code class="language-plaintext highlighter-rouge">@ComponentScan</code>이 붙은 설정 정보 클래스의 패키지가 시작 위치</li>
+  <li>설정 정보 클래스의 위치를 프로젝트 최상단에 두는 것을 권장</li>
+  <li>스프링 부트를 사용하면 스프링 부트의 대표 시작 정보인 <code class="language-plaintext highlighter-rouge">@SpringBootApplication</code>을 프로젝트 시작 루트 위치에 두는 것이 관례
+    <ul>
+      <li>이 설정 안에 <code class="language-plaintext highlighter-rouge">@ComponentScan</code>이 들어있음</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="컴포넌트-스캔-기본-대상">컴포넌트 스캔 기본 대상</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@Component</code> : 컴포넌트 스캔에서 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">@Controller</code> : 스프링 MVC 컨트롤러에서 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">@Service</code> : 스프링 비즈니스 로직에서 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">@Repository</code> : 스프링 데이터 접근 계층에서 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">@Configuration</code> : 스프링 설정 정보에서 사용</li>
+</ul>
+
+<h2 id="필터">필터</h2>
+<p><a href="https://github.com/dpdms529/SpringCore/commit/87ea9018984c19b93a37aabe8453efaa267e5260">코드</a></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">includeFilters</code> : 컴포넌트 스캔 대상을 추가로 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">excludeFilters</code> : 컴포넌트 스캔에서 제외할 대상을 지정</li>
+</ul>
+
+<h3 id="filtertype-옵션">FilterType 옵션</h3>
+<ul>
+  <li>ANNOTATION : 기본값, 애노테이션을 인식해서 동작</li>
+  <li>ASSIGNABLE_TYPE : 지정한 타입과 자식 타입을 인식해서 동작</li>
+  <li>ASPECTJ : AspectJ 패턴 사용</li>
+  <li>REGEX : 정규 표현식</li>
+  <li>
+    <p>CUSTOM : <code class="language-plaintext highlighter-rouge">TypeFilter</code>이라는 인터페이스를 구현해서 처리</p>
+  </li>
+  <li>스프링 부트는 컴포넌트 스캔을 기본으로 제공하고 있으며, 옵션을 변경하기 보다 스프링의 기본 설정에 맞춰 사용하는 것을 권장</li>
+</ul>
+
+<h2 id="중복-등록과-충돌">중복 등록과 충돌</h2>
+<h3 id="자동-빈-등록-vs-자동-빈-등록">자동 빈 등록 vs 자동 빈 등록</h3>
+<ul>
+  <li>컴포넌트 스캔에 의해 자동으로 스프링 빈이 등록되는데, 그 이름이 같은 경우 <code class="language-plaintext highlighter-rouge">ConflictingBeanDefinitionException</code> 예외 발생</li>
+</ul>
+
+<h3 id="수동-빈-등록-vs-자동-빈-등록">수동 빈 등록 vs 자동 빈 등록</h3>
+<ul>
+  <li>수동 빈 등록이 우선권을 가짐</li>
+  <li>수동 빈 등록시 남는 로그 : <code class="language-plaintext highlighter-rouge">Overriding bean definition for bean 'memoryMemberRepository' with a different
+  definition: replacing</code></li>
+  <li>최근 스프링 부트에서는 수동 빈 등록과 자동 빈 등록이 충돌이 나면 오류가 발생하도록 기본값을 바꿈</li>
+  <li>수동 빈 등록, 자동 빈 등록 오류 시 스프링 부트 에러 : <code class="language-plaintext highlighter-rouge">Consider renaming one of the beans or enabling overriding by setting
+spring.main.allow-bean-definition-overriding=true</code></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#lectures" class="page__taxonomy-item p-category" rel="tag">Lectures</a><span class="sep">, </span>
+    
+      <a href="/tags/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8" class="page__taxonomy-item p-category" rel="tag">스프링 핵심 원리 기본편</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  <!--  -->
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+    
+      
+      
+      <!-- <a href="/categories/#lectures" class="page__taxonomy-item p-category" rel="tag">Lectures</a><span class="sep">, </span> -->
+      <a href="https://dpdms529.github.io/lectures/" class="page__taxonomy-item p-category" rel="tag">Lectures</a><span class="sep">, </span>
+    
+      
+      
+      <!-- <a href="/categories/#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8" class="page__taxonomy-item p-category" rel="tag">스프링 핵심 원리 기본편</a> -->
+      <a href="https://dpdms529.github.io/lectures/스프링-핵심-원리-기본편/" class="page__taxonomy-item p-category" rel="tag">스프링 핵심 원리 기본편</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-11T23:18:00+09:00">May 11, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/5-%EC%8B%B1%EA%B8%80%ED%86%A4-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" class="pagination--pager" title="[스프링 핵심 원리 기본편] 5. 싱글톤 컨테이너
+">이전</a>
+    
+    
+      <a href="/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/7-%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84-%EC%9E%90%EB%8F%99-%EC%A3%BC%EC%9E%85/" class="pagination--pager" title="[스프링 핵심 원리 기본편] 7. 의존관계 자동 주입
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h4 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/9-%EB%B9%88-%EC%8A%A4%EC%BD%94%ED%94%84/" rel="permalink">[스프링 핵심 원리 기본편] 9. 빈 스코프
+</a>        
+      
+    </h4>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-06-02T02:15:00+09:00">June 2, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h4 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lectures/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/8-%EB%B9%88-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-%EC%BD%9C%EB%B0%B1/" rel="permalink">[스프링 핵심 원리 기본편] 8. 빈 생명주기 콜백
+</a>        
+      
+    </h4>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-31T11:26:00+09:00">May 31, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h4 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/experiences/jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8/Github-Actions%EB%A1%9C-%EB%B0%B0%ED%8F%AC/" rel="permalink">[Jekyll 블로그] Github Actions로 배포
+</a>        
+      
+    </h4>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T21:50:00+09:00">May 23, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h4 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/experiences/jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%83%9D%EC%84%B1/" rel="permalink">[Jekyll 블로그] Jekyll 블로그 생성
+</a>        
+      
+    </h4>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T16:53:00+09:00">May 23, 2023</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/dpdms529" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Joy. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GGH6LXTM4F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GGH6LXTM4F', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'dpdms529/dpdms529.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
